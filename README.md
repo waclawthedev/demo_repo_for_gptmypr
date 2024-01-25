@@ -1,2 +1,2 @@
 # demo_repo_for_gptmypr
-Sample project to practice using gptmypr tool
+Sample project to practice using gptmypr tool (https://github.com/waclawthedev/GPTmyPR)
