@@ -2,26 +2,28 @@ import json
 import requests
 
 
-def fetch_random_user():
+def fetch_random_user() -> dict:
     response = requests.get("https://randomuser.me/api/")
     return response.json()
 
 
-def save_user_to_file(user_data, filename):
+def save_user_to_file(user_data: dict, filename: str):
     with open(filename, "w") as file:
         json.dump(user_data, file, indent=4)
 
 
-def read_user_from_file(filename):
+def read_user_from_file(filename: str) -> dict:
     with open(filename, "r") as file:
         return json.load(file)
 
 
-def print_user(user):
+def print_user(user: dict):
     name = user["results"][0]["name"]
     print(f"Name: {name['title']} {name['first']} {name['last']}")
     email = user["results"][0]["email"]
     print(f"Email: {email}")
+    phone = user["results"][0]["phone"]
+    print(f"Phone: {phone}")
 
 
 def main():
